@@ -1,8 +1,8 @@
-import { getAllPosts } from "@/lib/posts"
+import { getAllBillAnalysisPosts } from "@/lib/posts"
 import Link from "next/link"
 
 export default function BillAnalysisPage() {
-  const posts = getAllPosts([
+  const posts = getAllBillAnalysisPosts([
     'title',
     'date',
     'slug',
@@ -26,14 +26,14 @@ export default function BillAnalysisPage() {
               <div className="text-sm text-gray-500 mb-2">
                 {new Date(post.date).toLocaleDateString()}
               </div>
-              <Link href={`/blog/${post.slug}`} className="block mt-2">
+              <Link href={`/bill-analysis/${post.slug}`} className="block mt-2">
                 <h2 className="text-xl font-semibold text-gray-900 hover:text-blue-600">{post.title}</h2>
               </Link>
               <p className="mt-3 text-gray-600 line-clamp-3">
                 {post.excerpt}
               </p>
               <div className="mt-4">
-                <Link href={`/blog/${post.slug}`} className="text-blue-600 hover:text-blue-800 font-medium text-sm inline-flex items-center">
+                <Link href={`/bill-analysis/${post.slug}`} className="text-blue-600 hover:text-blue-800 font-medium text-sm inline-flex items-center">
                   Read more 
                   <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
                 </Link>

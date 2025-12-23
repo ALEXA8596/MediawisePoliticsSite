@@ -1,18 +1,18 @@
-import { getGeneralPostBySlug, getAllGeneralPosts } from "@/lib/posts"
+import { getBillAnalysisPostBySlug, getAllBillAnalysisPosts } from "@/lib/posts"
 import { notFound } from "next/navigation"
 import ReactMarkdown from "react-markdown"
 
 export async function generateStaticParams() {
-  const posts = getAllGeneralPosts(['slug'])
+  const posts = getAllBillAnalysisPosts(['slug'])
 
   return posts.map((post) => ({
     slug: post.slug,
   }))
 }
 
-export default async function BlogPost({ params }: { params: Promise<{ slug: string }> }) {
+export default async function BillAnalysisPost({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
-  const post = getGeneralPostBySlug(slug, [
+  const post = getBillAnalysisPostBySlug(slug, [
     'title',
     'date',
     'slug',

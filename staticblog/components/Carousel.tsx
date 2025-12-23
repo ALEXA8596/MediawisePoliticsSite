@@ -26,7 +26,7 @@ export const Carousel: React.FC<CarouselProps> = ({ posts }) => {
         <div className="flex">
           {posts.map((post) => (
             <div className="flex-[0_0_100%] min-w-0 pl-4" key={post.slug}>
-              <Link href={`/blog/${post.slug}`} className="block group">
+              <Link href={`/bill-analysis/${post.slug}`} className="block group">
                 <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 h-96 flex flex-col">
                   <div className="h-48 bg-gray-200 relative overflow-hidden">
                      {/* Placeholder for cover image if not present, or use next/image if you have real images */}

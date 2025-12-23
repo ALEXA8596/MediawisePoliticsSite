@@ -1,9 +1,9 @@
-import { getAllPosts } from "@/lib/posts"
+import { getAllBillAnalysisPosts } from "@/lib/posts"
 import { Carousel } from "@/components/Carousel"
 import Link from "next/link"
 
 export default function Home() {
-  const posts = getAllPosts([
+  const posts = getAllBillAnalysisPosts([
     'title',
     'date',
     'slug',
